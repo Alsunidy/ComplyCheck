@@ -1,0 +1,25 @@
+# --- API + UI (product/delivery side) ---
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+streamlit==1.41.1
+python-multipart==0.0.20
+requests==2.32.5
+reportlab==4.2.5
+pandas==2.2.3
+
+# --- RAG engine (backend/engine, from compliance_rag_1) ---
+chromadb==1.5.9        # hybrid retrieval: vector index (engine/retrieval.py)
+rank-bm25==0.2.2       # hybrid retrieval: BM25 keyword index
+fastembed==0.8.0
+onnxruntime==1.23.2
+numpy==2.2.6
+
+# --- LLM judge + vision (OpenAI) ---
+openai==2.46.0
+
+# --- Evidence ingestion (PDF/DOCX/XLSX/screenshots/configs) ---
+pymupdf==1.28.0
+pdfplumber==0.11.9
+python-docx==1.2.0
+openpyxl==3.1.5
+python-dotenv==1.2.2

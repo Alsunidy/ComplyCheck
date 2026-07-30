@@ -1,0 +1,148 @@
+{
+  "report_id": "mock-report-0001",
+  "standard": "SAMA",
+  "generated_at": "2026-07-23T09:00:00Z",
+  "source_document": "Acme_Corp_Information_Security_Policy_v3.docx",
+  "results": [
+    {
+      "control_id": "3.1.1",
+      "control_domain": "Cyber Security Governance",
+      "control_text": "The organization shall establish, approve and maintain a cyber security policy that is aligned with its business and risk objectives.",
+      "status_code": "PASS",
+      "status_label": "Compliant",
+      "matched_policy_excerpt": "The Information Security Policy is approved annually by the Board Risk Committee and is reviewed against the organization's strategic objectives and risk appetite statement.",
+      "justification": "The uploaded policy explicitly documents board-level approval and an annual review cycle aligned to business and risk objectives, satisfying the control requirement in full.",
+      "recommendation": "No action required. Continue annual review cadence and retain approval records for audit evidence."
+    },
+    {
+      "control_id": "3.1.2",
+      "control_domain": "Cyber Security Governance",
+      "control_text": "A designated Chief Information Security Officer (CISO) function shall be established with direct reporting lines to senior management.",
+      "status_code": "PASS",
+      "status_label": "Compliant",
+      "matched_policy_excerpt": "The CISO reports directly to the Chief Executive Officer and provides quarterly cyber risk briefings to the Board.",
+      "justification": "The policy confirms a dedicated CISO role with a direct reporting line to senior management, meeting the control's intent.",
+      "recommendation": "No action required. Ensure the CISO's independence is preserved during any future organizational restructuring."
+    },
+    {
+      "control_id": "3.1.5",
+      "control_domain": "Cyber Security Governance",
+      "control_text": "Cyber security roles and responsibilities shall be clearly defined, documented and communicated across the organization.",
+      "status_code": "PARTIAL",
+      "status_label": "Partially Compliant",
+      "matched_policy_excerpt": "Section 2.4 lists high-level responsibilities for the Security Team but does not name specific roles outside of IT.",
+      "justification": "Roles are defined for the central security function only; the policy does not extend responsibility definitions to business unit owners or third-party contract managers.",
+      "recommendation": "Extend the RACI matrix to cover business unit security champions and third-party relationship owners, and formally communicate it organization-wide."
+    },
+    {
+      "control_id": "3.2.1",
+      "control_domain": "Cyber Security Strategy",
+      "control_text": "The organization shall develop a cyber security strategy that supports the overall business strategy and addresses current and emerging cyber threats.",
+      "status_code": "PARTIAL",
+      "status_label": "Partially Compliant",
+      "matched_policy_excerpt": "The document references a '2023-2025 Security Roadmap' but does not detail how emerging threats (e.g. AI-driven attacks, supply chain compromise) are incorporated.",
+      "justification": "A strategy document exists and is linked to business goals, but it lacks explicit treatment of emerging and evolving threat vectors as required by the control.",
+      "recommendation": "Update the security strategy to include a forward-looking threat landscape assessment, refreshed at least annually, covering emerging attack techniques."
+    },
+    {
+      "control_id": "3.2.4",
+      "control_domain": "Cyber Security Strategy",
+      "control_text": "Cyber security strategy execution shall be tracked through measurable objectives and key performance indicators reported to senior management.",
+      "status_code": "FAIL",
+      "status_label": "Non-Compliant",
+      "matched_policy_excerpt": "No matching content found in the uploaded document.",
+      "justification": "The policy does not define any KPIs, metrics, or a reporting cadence for tracking strategy execution, and no related appendix or annex was found.",
+      "recommendation": "Define a set of cyber security KPIs (e.g. mean time to detect/respond, patch compliance rate) and establish a quarterly reporting mechanism to senior management and the Board."
+    },
+    {
+      "control_id": "3.3.9",
+      "control_domain": "Human Resources Security",
+      "control_text": "Background verification checks shall be carried out for all candidates prior to employment, proportional to the sensitivity of the role.",
+      "status_code": "PASS",
+      "status_label": "Compliant",
+      "matched_policy_excerpt": "All new hires undergo criminal record, education, and reference checks prior to onboarding, with enhanced checks for roles with privileged system access.",
+      "justification": "The policy describes a risk-based pre-employment screening process that meets the control requirement, including enhanced due diligence for privileged roles.",
+      "recommendation": "No action required. Periodically audit screening vendor compliance with data protection requirements."
+    },
+    {
+      "control_id": "3.3.12",
+      "control_domain": "Human Resources Security",
+      "control_text": "Employees shall receive regular cyber security awareness training, including phishing simulation exercises.",
+      "status_code": "PARTIAL",
+      "status_label": "Partially Compliant",
+      "matched_policy_excerpt": "New employees complete a security awareness module during onboarding. No mention of recurring annual training or phishing simulations.",
+      "justification": "Onboarding training is documented, but the policy does not establish a recurring training cycle or phishing simulation program required for ongoing awareness.",
+      "recommendation": "Introduce mandatory annual refresher training and a quarterly phishing simulation program, with completion tracked and reported to HR and the CISO."
+    },
+    {
+      "control_id": "3.3.15",
+      "control_domain": "Human Resources Security",
+      "control_text": "A formal disciplinary process shall be defined for employees who violate cyber security policies.",
+      "status_code": "FAIL",
+      "status_label": "Non-Compliant",
+      "matched_policy_excerpt": "No matching content found in the uploaded document.",
+      "justification": "The uploaded policy does not reference any disciplinary process, escalation path, or consequences for policy violations.",
+      "recommendation": "Add a formal disciplinary process section, coordinated with HR and Legal, that defines escalation steps and sanctions proportional to violation severity."
+    },
+    {
+      "control_id": "3.5.2",
+      "control_domain": "Third Party Cyber Security",
+      "control_text": "Cyber security requirements shall be included in contracts with third parties that have access to the organization's systems or data.",
+      "status_code": "PASS",
+      "status_label": "Compliant",
+      "matched_policy_excerpt": "Standard vendor contracts include Annex C: Information Security Requirements, mandatory for any vendor accessing production systems.",
+      "justification": "The policy confirms mandatory security clauses embedded in third-party contracts, satisfying the control.",
+      "recommendation": "No action required. Confirm Annex C is kept current with evolving regulatory requirements during contract renewals."
+    },
+    {
+      "control_id": "3.5.6",
+      "control_domain": "Third Party Cyber Security",
+      "control_text": "The organization shall perform periodic cyber security risk assessments of third parties based on the criticality of services provided.",
+      "status_code": "PARTIAL",
+      "status_label": "Partially Compliant",
+      "matched_policy_excerpt": "Vendor risk assessments are conducted 'at onboarding and upon contract renewal' but no interim periodic review frequency is specified for critical vendors.",
+      "justification": "Assessments occur at fixed contractual milestones only; the control expects an ongoing, criticality-based periodic review cycle which is not defined.",
+      "recommendation": "Define a tiered reassessment schedule (e.g. annually for critical vendors, biennially for standard vendors) independent of contract renewal dates."
+    },
+    {
+      "control_id": "3.5.9",
+      "control_domain": "Third Party Cyber Security",
+      "control_text": "The organization shall maintain the right to audit third parties' cyber security controls and require evidence of independent assurance (e.g. SOC 2, ISO 27001).",
+      "status_code": "FAIL",
+      "status_label": "Non-Compliant",
+      "matched_policy_excerpt": "No matching content found in the uploaded document.",
+      "justification": "No audit rights clause or requirement for independent assurance certifications from vendors was found anywhere in the policy.",
+      "recommendation": "Add a contractual audit-rights clause and require critical vendors to submit current SOC 2 Type II or ISO 27001 certificates annually."
+    },
+    {
+      "control_id": "4.1.3",
+      "control_domain": "Identity and Access Management",
+      "control_text": "Multi-factor authentication shall be enforced for all remote access and privileged account access.",
+      "status_code": "PASS",
+      "status_label": "Compliant",
+      "matched_policy_excerpt": "MFA is mandatory for all VPN connections and for any account with administrative privileges, enforced via the corporate IdP.",
+      "justification": "The policy explicitly mandates MFA for both remote and privileged access scenarios, fully satisfying the control.",
+      "recommendation": "No action required. Periodically test MFA bypass/fallback procedures for weaknesses."
+    },
+    {
+      "control_id": "4.2.7",
+      "control_domain": "Identity and Access Management",
+      "control_text": "User access rights shall be reviewed periodically and revoked promptly upon termination or role change.",
+      "status_code": "PARTIAL",
+      "status_label": "Partially Compliant",
+      "matched_policy_excerpt": "Access is revoked 'within 5 business days of termination'. No mention of periodic access recertification for active employees.",
+      "justification": "Termination-based revocation is addressed, but the control also requires periodic recertification of active user access, which is absent from the policy.",
+      "recommendation": "Reduce termination revocation SLA to same-day where feasible, and introduce a quarterly access recertification process for all active accounts."
+    },
+    {
+      "control_id": "5.1.4",
+      "control_domain": "Incident Management",
+      "control_text": "The organization shall establish an incident response plan that includes classification, escalation, and regulatory notification timelines.",
+      "status_code": "PASS",
+      "status_label": "Compliant",
+      "matched_policy_excerpt": "The Incident Response Plan (Appendix D) defines a 4-tier severity classification, escalation matrix, and a 72-hour SAMA notification requirement for material incidents.",
+      "justification": "The policy contains a complete incident response framework with classification, escalation, and regulator notification timelines consistent with the control.",
+      "recommendation": "No action required. Conduct an annual tabletop exercise to validate the plan remains effective."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+# Secrets -- never commit or ship these
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Editor / tooling
+.vscode/
+.idea/
+.claude/
+
+# Local artifacts
+*.log
+archive/**/*.bak
