@@ -49,9 +49,11 @@ backend/
 frontend/
   app.py                   Streamlit UI
   ui_text.py               every UI string, in English and Arabic
+tests/                     pytest suite (see Tests below)
 sample_evidence/           sample files to try the tool with (see below)
 archive/                   kept for reference, not used at runtime
 requirements.txt
+requirements-dev.txt        test dependencies
 .env.example               copy to .env and add your OpenAI key
 ```
 
@@ -152,6 +154,50 @@ streamlit run app.py
 $env:COMPLYCHECK_API_URL = "http://localhost:8000"
 streamlit run app.py
 ```
+
+## Tests
+
+```bash
+pip install -r requirements-dev.txt
+pytest
+```
+
+177 tests, ~4 seconds, **no API key and no network required** — every OpenAI
+call is stubbed and the embedding model is replaced with a deterministic
+fake, so a grader can run the suite immediately after `pip install`.
+
+| File | Covers |
+|---|---|
+| `test_arabic_text.py` | ligature repair, language detection, and that the shipped Arabic corpus is free of extraction defects |
+| `test_retrieval.py` | hybrid search: tokenizing, ranking, and the RRF fusion rule |
+| `test_evidence_pipeline.py` | evidence classification, per-row spreadsheet chunking, provenance tagging, package language |
+| `test_compliance_engine.py` | control loading, verdict parsing/clamping, batching, the no-evidence path |
+| `test_llm_client.py` | model fallback chain, retry-delay parsing, fail-fast on exhausted quota |
+| `test_chat_handler.py` | grounding, citation filtering, language routing, follow-up query rewriting |
+| `test_api.py` | every endpoint: validation, error codes, backward compatibility |
+| `test_report_and_ui.py` | PDF generation (EN + AR), Arabic shaping, progress state, UI copy completeness |
+
+Several tests are regression guards for defects found during development,
+and are commented as such — for example that RRF must ignore zero-scoring
+BM25 results (which once made "multi-factor authentication" retrieve the
+hiring-checks sentence), and that the Arabic repair must leave "إلى" and
+"إلكتروني" untouched.
+
+`tests/TEST_RESULTS.txt` holds the recorded output of a full run.
+
+### Integration tests (optional)
+
+Four tests exercise the real OpenAI API and are excluded from the default
+run. With `OPENAI_API_KEY` set:
+
+```bash
+pytest -m integration
+```
+
+They cost a few cents and take ~35s: a full 36-control audit of
+`sample_evidence/sample_policy.pdf`, an English and an Arabic chat answer,
+and a grounding check that the assistant refuses a question whose answer is
+not in the retrieved context.
 
 ## Sample request/response
 

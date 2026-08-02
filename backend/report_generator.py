@@ -3,7 +3,7 @@ ComplyCheck - SAMA Compliance Auditor
 PDF report generation (ReportLab). Kept separate from main.py so the
 layout/branding can be restyled without touching API logic.
 """
-from datetime import datetime
+from datetime import datetime, timezone
 from io import BytesIO
 
 from reportlab.lib import colors
@@ -162,7 +162,7 @@ def _build_styles(language: str = "en") -> dict:
 
 
 def _build_header(report: dict, styles: dict, language: str) -> list:
-    generated_at = report.get("generated_at", datetime.utcnow().isoformat())
+    generated_at = report.get("generated_at", datetime.now(timezone.utc).isoformat())
     # An ISO timestamp inside RTL text gets visually chopped by the bidi
     # algorithm, so Arabic reports show a plain date.
     if language == "ar":
